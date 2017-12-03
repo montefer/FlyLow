@@ -1,0 +1,66 @@
+  
+  #Create scatterplots for price across time and dates
+  #Regular Weekdays
+  rwd_plot<-ggplot() +
+    geom_point(data=reg_weekdays, aes(x=reg_weekdays[,1],y=reg_weekdays[,2], color=reg_weekdays[,2])) +
+    geom_smooth(aes(x=reg_weekdays[,1],y=reg_weekdays[,2]), method = "loess") +
+    scale_colour_gradient(name="Price", low='blue', high='#de2d26')
+  
+  
+  #Re-write axis labels, add title
+  rwd_plot<-rwd_plot +
+    labs(title = paste("Predicted Price vs. Date from",depart,"to",arrive), x = "Date", y = "Price") +
+    theme(axis.text.x=element_text(angle=40, size=10, vjust=0.5))
+  
+  
+  
+  
+  
+  
+  #Regular Weekends
+  rwe_plot<-ggplot() +
+    geom_point(data=reg_weekends, aes(x=reg_weekends[,1],y=reg_weekends[,2], color=reg_weekends[,2])) +
+    geom_smooth(aes(x=reg_weekends[,1],y=reg_weekends[,2]), method = "loess") +
+    scale_colour_gradient(name="Price", low='blue', high='#de2d26')
+  
+  
+  #Re-write axis labels, add title
+  rwe_plot<-rwe_plot +
+    labs(title = paste("Predicted Price vs. Date from",depart,"to",arrive), x = "Date", y = "Price") +
+    theme(axis.text.x=element_text(angle=40, size=10, vjust=0.5))
+  
+  
+  
+  
+  
+  
+  #Holiday Weekdays
+  hwd_plot<-ggplot() +
+    geom_point(data=hol_weekdays, aes(x=hol_weekdays[,1],y=hol_weekdays[,2], color=hol_weekdays[,2])) +
+    geom_smooth(aes(x=hol_weekdays[,1],y=hol_weekdays[,2]), method = "loess") +
+    scale_colour_gradient(name="Price", low='blue', high='#de2d26')
+  
+  
+  #Re-write axis labels, add title
+  hwd_plot<-hwd_plot +
+    labs(title = paste("Predicted Price vs. Date from",depart,"to",arrive), x = "Date", y = "Price") +
+    theme(axis.text.x=element_text(angle=40, size=10, vjust=0.5))
+  
+  
+  
+  
+  
+  
+  #Holiday Weekends
+  hwe_plot<-ggplot() +
+    geom_point(data=hol_weekends, aes(x=hol_weekends[,1],y=hol_weekends[,2], color=hol_weekends[,2])) +
+    geom_smooth(aes(x=hol_weekends[,1],y=hol_weekends[,2]), method = "loess") +
+    scale_colour_gradient(name="Price", low='blue', high='#de2d26')
+  
+  
+  #Re-write axis labels, add title
+  hwe_plot<-hwe_plot +
+    labs(title = paste("Predicted Price vs. Date from",depart,"to",arrive), x = "Date", y = "Price") +
+    theme(axis.text.x=element_text(angle=40, size=10, vjust=0.5))
+  
+  
